@@ -4,7 +4,7 @@ metadata:
   name: traefik-mesh
   namespace: kube-system
 spec:
-  project: infra
+  project: default
   source:
     chart: traefik/traefik-mesh
     repoURL: https://traefik.github.io/charts 
