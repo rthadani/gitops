@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    chart: traefik/traefik-mesh
+    chart: traefik-mesh
     repoURL: https://traefik.github.io/charts 
     helm:
       parameters:
