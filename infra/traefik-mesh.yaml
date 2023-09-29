@@ -9,7 +9,6 @@ spec:
     chart: traefik/traefik-mesh
     repoURL: https://traefik.github.io/charts 
     helm:
-      releaseName: traefik-mesh
       parameters:
         - name: controller.image.pullPolicy 
           value: "IfNotPresent"
