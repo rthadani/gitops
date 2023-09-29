@@ -8,14 +8,6 @@ spec:
   source:
     chart: traefik-mesh
     repoURL: https://traefik.github.io/charts 
-    helm:
-      parameters:
-        - name: controller.image.pullPolicy 
-          value: "IfNotPresent"
-        - name: controller.image.tag
-          value: latest
-      # valueFiles:
-      #  - values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kube-system
