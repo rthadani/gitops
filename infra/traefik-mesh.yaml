@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik-mesh
+  namespace: kube-system
+spec:
+  project: infra
+  source:
+    chart: traefik/traefik-mesh
+    repoURL: https://traefik.github.io/charts 
+    helm:
+      releaseName: traefik-mesh
+      parameters:
+        - name: controller.image.pullPolicy 
+          value: "IfNotPresent"
+        - name: controller.image.tag
+          value: latest
+      # valueFiles:
+      #  - values.yaml
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
