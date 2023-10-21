@@ -10,9 +10,11 @@ configMapGenerator:
       usernameSecret:
         key: git_username
         name: autopilot-secret
+  name: argocd-cm
+- name: argocd-cmd-params-cm
+  literals:
   - server.insecure="true"
   - server.rootpath="/argocd"
-  name: argocd-cm
 kind: Kustomization
 namespace: argocd
 resources:
