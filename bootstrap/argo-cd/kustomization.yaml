@@ -12,6 +12,7 @@ configMapGenerator:
         name: autopilot-secret
   name: argocd-cm
 - name: argocd-cmd-params-cm
+  behavior: merge
   literals:
   - server.insecure="true"
   - server.rootpath="/argocd"
