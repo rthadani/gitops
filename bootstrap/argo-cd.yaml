@@ -27,6 +27,7 @@ spec:
       selfHeal: true
     syncOptions:
     - allowEmpty=true
+  kustomizeBuildOptions: "--enable-helm"
 status:
   health: {}
   summary: {}
