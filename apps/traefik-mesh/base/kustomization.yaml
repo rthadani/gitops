@@ -7,4 +7,7 @@ helmCharts:
   version: 4.1.1
   repo: https://traefik.github.io/charts 
   namespace: kube-system
+  valuesInline:
+    tracing.deploy: false
+    metrics.deploy: false
 
