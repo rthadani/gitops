@@ -8,6 +8,8 @@ helmCharts:
   repo: https://traefik.github.io/charts 
   namespace: kube-system
   valuesInline:
-    tracing.deploy: false
-    metrics.deploy: false
+    tracing:
+      deploy: false
+    metrics:
+      deploy: false
 
