@@ -3,7 +3,7 @@ kind: Kustomization
 
 helmCharts:
 - name: traefik-mesh
-  includeCRDs: false
+  includeCRDs: true
   version: 4.1.1
   repo: https://traefik.github.io/charts 
   namespace: kube-system
