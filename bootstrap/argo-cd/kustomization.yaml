@@ -10,7 +10,7 @@ configMapGenerator:
       usernameSecret:
         key: git_username
         name: autopilot-secret
-  - kustomize.buildOptions="--enable-alpha-plugins --enable-helm --load-restrictor LoadRestrictionsNone"
+  - kustomize.buildOptions="--enable-helm"
   name: argocd-cm
 - name: argocd-cmd-params-cm
   behavior: merge
