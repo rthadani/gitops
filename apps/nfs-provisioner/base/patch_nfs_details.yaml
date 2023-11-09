@@ -20,5 +20,3 @@ spec:
           nfs:
             server: 192.168.0.103
             path: /nfs/kubernetes 
-            mountOptions:
-              - nfsvers=4.2
