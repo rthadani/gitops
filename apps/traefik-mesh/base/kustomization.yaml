@@ -9,12 +9,13 @@ helmCharts:
   namespace: kube-system
   valuesInline:
     persistence:
+      enabled: true
       accessMode: ReadWrite
       size: 10Gi
       storageClass: nfs-client
       volumeName: traefik-mesh
     tracing:
-      deploy: true
+      deploy: false
     metrics:
-      deploy: true
+      deploy: false
 
