@@ -8,8 +8,13 @@ helmCharts:
   repo: https://traefik.github.io/charts 
   namespace: kube-system
   valuesInline:
+    persistence:
+      accessMode: ReadWrite
+      size: 10Gi
+      storageClass: nfs-client
+      volumeName: traefik-mesh
     tracing:
-      deploy: false
+      deploy: true
     metrics:
-      deploy: false
+      deploy: true
 
