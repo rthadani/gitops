@@ -7,5 +7,5 @@ spec:
     app.kubernetes.io/name: excalidraw
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 5000
+      port: 5000
+      targetPort: 80
