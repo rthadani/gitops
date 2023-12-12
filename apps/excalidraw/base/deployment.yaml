@@ -17,5 +17,3 @@ spec:
       containers:
       - name: excalidraw
         image: excalidraw/excalidraw:latest
-        ports:
-        - containerPort: 5000
