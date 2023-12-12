@@ -3,7 +3,7 @@
   "userGivenName": "excalidraw",
   "destNamespace": "apps",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/nfs-provisioner/overlays/infra",
+  "srcPath": "apps/excalidraw/overlays/applications",
   "srcRepoURL": "https://github.com/rthadani/gitops.git",
   "srcTargetRevision": "",
   "labels": null,
