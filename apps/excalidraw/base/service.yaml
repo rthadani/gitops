@@ -4,7 +4,7 @@ metadata:
   name: excalidraw-service
 spec:
   selector:
-    app: excalidraw-deployment
+    app: excalidraw
   ports:
     - protocol: TCP
       port: 5000
