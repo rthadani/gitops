@@ -10,10 +10,10 @@ spec:
   - kind: Rule
     match: PathPrefix('/excalidraw')
     services:
-    - name: excalidraw
+    - name: excalidraw-service
       passHostHeader: false
       port: 5000
-      kind: TraefikService
+      kind: Service
   tls:
     certResolver: default
       
