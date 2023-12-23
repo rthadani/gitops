@@ -6,6 +6,7 @@ spec:
   selector:
     app: excalidraw
   ports:
-    - protocol: TCP
-      port: 5000
-      targetPort: 80
+  - protocol: TCP
+    port: 5000
+    targetPort: 80
+    name: http
