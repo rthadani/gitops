@@ -8,7 +8,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: PathPrefix(`/excalidraw`)
+    match: PathPrefix(`/excalidraw`) ||  PathPrefix(`/Virgil.woff2`) ||  PathPrefix(`/fonts.css`) || PathPrefix(`/static/css`) || PathPrefix(`/static/js`)
     services:
     - name: excalidraw-service
       passHostHeader: false
