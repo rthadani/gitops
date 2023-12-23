@@ -14,6 +14,9 @@ spec:
       passHostHeader: false
       port: 80
       kind: Service
+    middlewares:
+    - name: strip-prefix
+      namespace: apps 
   tls:
     certResolver: default
       
