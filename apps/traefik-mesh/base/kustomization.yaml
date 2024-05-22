@@ -17,8 +17,6 @@ helmCharts:
       volumeName: traefik-mesh
     tracing:
       deploy: true
-      zipkin:
-        sampleRate: 0.2
     metrics:
       deploy: true
 
