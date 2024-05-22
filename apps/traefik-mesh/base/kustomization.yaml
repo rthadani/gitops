@@ -17,6 +17,9 @@ helmCharts:
       volumeName: traefik-mesh
     tracing:
       deploy: true
+      jaeger:
+        samplingServerURL: http://jaeger-agent.default.svc:5778/sampling
+        localAgentHostPort: jaeger-agent.default.svc:6831
     metrics:
       deploy: true
 
