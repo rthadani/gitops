@@ -8,7 +8,7 @@ spec:
   - websecure
   routes:
   - kind: Rule
-    match: Host(`excalidraw.rthadani.xyz`) || Host(`excalidraw.io`)
+    match: Host(`excalidraw.rthadani.xyz`) || Host(`excalidraw.io.local`)
     services:
     - name: excalidraw-service
       passHostHeader: false
@@ -18,6 +18,5 @@ spec:
     - name: strip-prefix
       namespace: apps 
   tls:
-    certResolver: default
-      
+    certResolver: letsencrypt
   
