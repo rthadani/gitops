@@ -18,6 +18,6 @@ spec:
     - name: strip-prefix
       namespace: apps 
   tls:
-    secretName: excalidraw.rthadani.xyz-cert-g64r2
+    secretName: excalidraw.rthadani.xyz-secret
     #certResolver: default
   
