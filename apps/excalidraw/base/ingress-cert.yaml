@@ -1,0 +1,19 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: excalidraw-ingress-acme
+  namespace: apps
+spec:
+  entryPoints:
+  - web
+  routes:
+  - kind: Rule
+    match: Host(`excalidraw.rthadani.xyz`) && PathPrefix(`./well-known/acme-challenge`) 
+    services:
+    - name: cm-acme-http-solver-dbnkh
+      passHostHeader: false
+      port: 8089
+      kind: Service
+      namespace: apps 
+    #certResolver: default
+  
