@@ -5,7 +5,7 @@ metadata:
   namespace: apps
 spec:
   entryPoints:
-  # - websecure
+  - websecure
   - web
   routes:
   - kind: Rule
@@ -18,7 +18,7 @@ spec:
     middlewares:
     - name: strip-prefix
       namespace: apps 
-  # tls:
-  #   secretName: excalidraw.rthadani.xyz-secret
+  tls:
+    secretName: excalidraw.rthadani.xyz-secret
     #certResolver: default
   
