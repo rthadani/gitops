@@ -5,8 +5,10 @@ metadata:
   namespace: apps
 spec:
   entryPoints:
-  - websecure
-  - web
+    web:
+      address: ":80"
+    websecure:
+      address: ":443"
   routes:
   - kind: Rule
     match: Host(`excalidraw.rthadani.xyz`) || Host(`excalidraw.io.local`)
