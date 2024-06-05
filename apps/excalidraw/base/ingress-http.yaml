@@ -8,7 +8,7 @@ spec:
   - web
   routes:
   - kind: Rule
-    match: Host(`excalidraw.rthadani.xyz`) || Host(`excalidraw.io.local`)
+    match: Host(`excalidraw.rthadani.xyz`) || Host(`excalidraw.io.local`) || PathPrefix(`/.well-known`)
     services:
     - name: excalidraw-service
       passHostHeader: false
