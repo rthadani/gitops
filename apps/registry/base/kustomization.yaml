@@ -3,7 +3,9 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
+  - storage.yaml
   - ingress.yaml
+
 
 helmCharts:
 - name: docker-registry 
