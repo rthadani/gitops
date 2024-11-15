@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - namespace.yaml
+  - ingress.yaml
+
+helmCharts:
+- name: docker-registry 
+  includeCRDs: true
+  repo: https://helm.twun.io
+  namespace: apps 
+  valuesInline:
+    persistence:
+      enabled: true
+      deleteEnabled: true
+      accessMode: ReadWrite
+      size: 10Gi
+      storageClass: nfs-client
+      existingClaim: docker-registry-pv-claim
+    secrets:
+      htpasswd: admin:$2y$05$Gh/3ppmkuIXJIVyBBtHf0ug.wnnJvbtSEzlXz6z/7oO7XvF/xq7Ni

@@ -1,0 +1,16 @@
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: docker-registry
+  namespace: apps 
+
+spec:
+  entryPoints:
+    - web
+
+  routes:
+    - match: Host(`io`)
+      kind: Rule
+      services:
+        - name: docker-registry
+          port: 5000
