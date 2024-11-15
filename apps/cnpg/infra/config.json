@@ -1,0 +1,11 @@
+{
+  "appName": "cnpg",
+  "userGivenName": "cnpg",
+  "destNamespace": "cnpg",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/cert-manager/overlays/infra",
+  "srcRepoURL": "https://github.com/rthadani/gitops",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
