@@ -7,10 +7,9 @@ metadata:
 spec:
   entryPoints:
     - web
-
   routes:
-    - match: Host(`io`)
+    - match: Host(`io.local`)
       kind: Rule
       services:
-        - name: docker-registry
+        - name: release-name-docker-registry
           port: 5000
