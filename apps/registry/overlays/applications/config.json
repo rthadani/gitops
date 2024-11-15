@@ -1,0 +1,11 @@
+{
+  "appName": "docker-registry",
+  "userGivenName": "docker-registry",
+  "destNamespace": "apps",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/registry/overlays/applications",
+  "srcRepoURL": "https://github.com/rthadani/gitops",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
