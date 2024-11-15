@@ -8,7 +8,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`io.local`)
+    - match: Host(`docker.local`)
       kind: Rule
       services:
         - name: release-name-docker-registry
