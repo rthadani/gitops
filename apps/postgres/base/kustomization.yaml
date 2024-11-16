@@ -3,44 +3,44 @@ kind: Kustomization
 
 namespace: apps
 
-resources:
-  - service.yaml
+# resources:
+#   - service.yaml
 #    - ingress.yaml
 
-helmCharts:
-  - name: postgresql
-    releaseName: postgres
-    repo: https://charts.bitnami.com/bitnami
-    valuesInline:  
-       image:
-          # registry: ghcr.io
-          repository: ramsrib/pgvector 
-          tag: "15"
-          pullPolicy: IfNotPresent
-       auth:
-          postgresqlUsername: pg_user
-          postgresqlPassword: pg_password
-          postgresqlDatabase: toro 
-       primary:
-           persistence:
-               enabled: false
-               storageClass: nfs-client
-               volumeName: postgres 
-               size: "20Gi"
-           volumeMounts:
-              - name: run-dir
-                mountPath: /var/run/postgresql
-           volumes:
-              - name: run-dir
-                emptyDir: {}
-           resources:
-               requests:
-                 memory: "1Gi"
-                 cpu: "500m"
-               limits:
-                 memory: "2Gi"
-       replicaCount: 0
-        # Use initdbScripts to create the pgvector extension automatically
-       initdbScripts:
-          01-create-extension.sql: |
-              CREATE EXTENSION IF NOT EXISTS vector;
+# helmCharts:
+#   - name: postgresql
+#     releaseName: postgres
+#     repo: https://charts.bitnami.com/bitnami
+#     valuesInline:  
+#        image:
+#           # registry: ghcr.io
+#           repository: ramsrib/pgvector 
+#           tag: "15"
+#           pullPolicy: IfNotPresent
+#        auth:
+#           postgresqlUsername: pg_user
+#           postgresqlPassword: pg_password
+#           postgresqlDatabase: toro 
+#        primary:
+#            persistence:
+#                enabled: false
+#                storageClass: nfs-client
+#                volumeName: postgres 
+#                size: "20Gi"
+#            volumeMounts:
+#               - name: run-dir
+#                 mountPath: /var/run/postgresql
+#            volumes:
+#               - name: run-dir
+#                 emptyDir: {}
+#            resources:
+#                requests:
+#                  memory: "1Gi"
+#                  cpu: "500m"
+#                limits:
+#                  memory: "2Gi"
+#        replicaCount: 0
+#         # Use initdbScripts to create the pgvector extension automatically
+#        initdbScripts:
+#           01-create-extension.sql: |
+#               CREATE EXTENSION IF NOT EXISTS vector;
