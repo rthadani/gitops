@@ -1,0 +1,23 @@
+image:
+  registry: ghcr.io
+  repository: ankane/pgvector
+  tag: "15"
+  namespace: apps
+  pullPolicy: IfNotPresent
+
+postgresqlUsername: pg_user
+postgresqlPassword: mypassword
+postgresqlDatabase: mydatabase
+
+primary:
+  persistence:
+    enabled: true
+    size: 10Gi
+    storageClass: nfs-client
+
+replicaCount: 2
+
+# Use initdbScripts to create the pgvector extension automatically
+initdbScripts:
+  01-create-extension.sql: |
+    CREATE EXTENSION IF NOT EXISTS vector;
