@@ -13,7 +13,7 @@ helmCharts:
     repo: https://charts.bitnami.com/bitnami
     valuesInline:  
        image:
-          registry: ghcr.io
+          # registry: ghcr.io
           repository: ramsrib/pgvector 
           tag: "15"
           pullPolicy: IfNotPresent
