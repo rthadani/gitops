@@ -11,5 +11,5 @@ helmCharts:
   - name: postgresql
     releaseName: postgres
     repo: https://charts.bitnami.com/bitnami
-    valueFiles: 
+    valuesFiles: 
       - values.yaml
