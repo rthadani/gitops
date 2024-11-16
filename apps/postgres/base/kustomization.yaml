@@ -17,17 +17,17 @@ helmCharts:
           repository: ankane/pgvector
           tag: "postgres15-vec0.5.0"
           pullPolicy: IfNotPresent
-        auth:
-          postgresqlUsername: pg_user
-          postgresqlPassword: pg_password
-          postgresqlDatabase: toro 
-        primary:
-          persistence:
-            enabled: true
-            storageClass: nfs-client
-        replicaCount: 1
+       auth:
+         postgresqlUsername: pg_user
+         postgresqlPassword: pg_password
+         postgresqlDatabase: toro 
+       primary:
+         persistence:
+           enabled: true
+           storageClass: nfs-client
+       replicaCount: 1
 
         # Use initdbScripts to create the pgvector extension automatically
-        initdbScripts:
-          01-create-extension.sql: |
-              CREATE EXTENSION IF NOT EXISTS vector;
+       initdbScripts:
+         01-create-extension.sql: |
+             CREATE EXTENSION IF NOT EXISTS vector;
