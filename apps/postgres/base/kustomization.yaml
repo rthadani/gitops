@@ -3,9 +3,9 @@ kind: Kustomization
 
 namespace: apps
 
-# resources:
-#   - service.yaml
-#   - ingress.yaml
+resources:
+   - service.yaml
+   - ingress.yaml
 
 helmCharts:
   - name: postgresql
@@ -15,7 +15,7 @@ helmCharts:
        image:
           registry: ghcr.io
           repository: ankane/pgvector
-          tag: "postgres15-vec0.5.0"
+          tag: "latest-pg15"
           pullPolicy: IfNotPresent
        auth:
           postgresqlUsername: pg_user
@@ -26,6 +26,7 @@ helmCharts:
            enabled: true
            storageClass: nfs-client
            volumeName: postgres 
+           size: "20Gi"
          resources:
            requests:
              memory: "1Gi"
