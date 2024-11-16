@@ -14,8 +14,8 @@ helmCharts:
     valuesInline:  
        image:
           registry: ghcr.io
-          repository: ankane/pgvector
-          tag: "latest-pg15"
+          repository: ramsrib/pgvector 
+          tag: "15"
           pullPolicy: IfNotPresent
        auth:
           postgresqlUsername: pg_user
