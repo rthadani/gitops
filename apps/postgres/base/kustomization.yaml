@@ -11,23 +11,29 @@ helmCharts:
   - name: postgresql
     releaseName: postgres
     repo: https://charts.bitnami.com/bitnami
-    valuesInline: 
+    valuesInline:  
        image:
           registry: ghcr.io
           repository: ankane/pgvector
           tag: "postgres15-vec0.5.0"
           pullPolicy: IfNotPresent
        auth:
-         postgresqlUsername: pg_user
-         postgresqlPassword: pg_password
-         postgresqlDatabase: toro 
+          postgresqlUsername: pg_user
+          postgresqlPassword: pg_password
+          postgresqlDatabase: toro 
        primary:
          persistence:
            enabled: true
            storageClass: nfs-client
-       replicaCount: 1
+         resources:
+           requests:
+             memory: "1Gi"
+             cpu: "500m"
+           limits:
+             memory: "2Gi"
+       replicaCount: 0
 
         # Use initdbScripts to create the pgvector extension automatically
        initdbScripts:
-         01-create-extension.sql: |
-             CREATE EXTENSION IF NOT EXISTS vector;
+          01-create-extension.sql: |
+              CREATE EXTENSION IF NOT EXISTS vector;
