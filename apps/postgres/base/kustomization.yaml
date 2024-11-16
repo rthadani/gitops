@@ -3,6 +3,10 @@ kind: Kustomization
 
 namespace: apps
 
+resources:
+  - service.yaml
+  - ingress.yaml
+
 helmCharts:
   - name: postgresql
     releaseName: postgres

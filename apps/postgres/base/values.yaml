@@ -6,16 +6,18 @@ image:
   pullPolicy: IfNotPresent
 
 postgresqlUsername: pg_user
-postgresqlPassword: mypassword
-postgresqlDatabase: mydatabase
+postgresqlPassword: pg_password
+postgresqlDatabase: toro 
 
 primary:
-  persistence:
-    enabled: true
-    size: 10Gi
+  resources:
+    requests:
+      memory: "1Gi"
+      cpu: "500m"
+    limits:
+      memory: "2Gi"
     storageClass: nfs-client
-
-replicaCount: 2
+replicaCount: 1
 
 # Use initdbScripts to create the pgvector extension automatically
 initdbScripts:
