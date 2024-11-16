@@ -3,8 +3,8 @@ kind: Kustomization
 
 namespace: apps
 
-# resources:
-#    - service.yaml
+resources:
+  - service.yaml
 #    - ingress.yaml
 
 helmCharts:
@@ -34,17 +34,17 @@ helmCharts:
                 volumeMounts:
                   - name: data
                     mountPath: /bitnami/postgresql
-       persistence:
-           enabled: true
-           storageClass: nfs-client
-           volumeName: postgres 
-           size: "20Gi"
-       resources:
-           requests:
-             memory: "1Gi"
-             cpu: "500m"
-           limits:
-             memory: "2Gi"
+           persistence:
+               enabled: false
+               storageClass: nfs-client
+               volumeName: postgres 
+               size: "20Gi"
+           resources:
+               requests:
+                 memory: "1Gi"
+                 cpu: "500m"
+               limits:
+                 memory: "2Gi"
        replicaCount: 0
         # Use initdbScripts to create the pgvector extension automatically
        initdbScripts:
