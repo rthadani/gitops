@@ -22,19 +22,30 @@ helmCharts:
           postgresqlPassword: pg_password
           postgresqlDatabase: toro 
        primary:
-         persistence:
+           initContainers:
+              - name: fix-permissions
+                image: busybox:latest
+                command:
+                  - sh
+                  - "-c"
+                  - |
+                    chown -R 999:999 /bitnami/postgresql
+                    chmod -R 775 /bitnami/postgresql
+                volumeMounts:
+                  - name: data
+                    mountPath: /bitnami/postgresql
+       persistence:
            enabled: true
            storageClass: nfs-client
            volumeName: postgres 
            size: "20Gi"
-         resources:
+       resources:
            requests:
              memory: "1Gi"
              cpu: "500m"
            limits:
              memory: "2Gi"
        replicaCount: 0
-
         # Use initdbScripts to create the pgvector extension automatically
        initdbScripts:
           01-create-extension.sql: |
