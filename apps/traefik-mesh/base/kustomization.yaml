@@ -16,7 +16,7 @@ helmCharts:
       storageClass: nfs-client
       volumeName: traefik-mesh
     tracing:
-      deploy: true
+      deploy: false
     metrics:
-      deploy: true
+      deploy: false
 

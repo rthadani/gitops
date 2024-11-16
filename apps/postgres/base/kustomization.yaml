@@ -25,6 +25,7 @@ helmCharts:
          persistence:
            enabled: true
            storageClass: nfs-client
+           volumeName: postgres 
          resources:
            requests:
              memory: "1Gi"
