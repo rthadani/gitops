@@ -27,6 +27,12 @@ helmCharts:
                storageClass: nfs-client
                volumeName: postgres 
                size: "20Gi"
+           volumeMounts:
+              - name: run-dir
+                mountPath: /var/run/postgresql
+           volumes:
+              - name: run-dir
+                emptyDir: {}
            resources:
                requests:
                  memory: "1Gi"
